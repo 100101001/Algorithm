@@ -24,12 +24,11 @@ func KMP(s, p string) {
 
 	// 借助部分匹配表
 	for i, j := 0, 0; i < len(s); i++ {
+		for s[i] != p[j] && j > 0 {
+			j = helper[j]
+		}
 		if s[i] == p[j] {
 			j++
-		} else {
-			// j不需要回到0，只需要回到匹配的p[0..j]子串的最长匹配前缀位置即可
-			j = helper[j]
-			i--
 		}
 		if j == len(p) {
 			fmt.Println("匹配成功")

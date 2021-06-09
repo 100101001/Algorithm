@@ -11,5 +11,10 @@ func main() {
 
 	//KMP("ABABCABCAB", "ABCAB")
 
-	longestPalindrome("cbcbccde")
+	//longestPalindrome("cbcbccde")
+
+	root := &TreeNode{Val: 3}
+	root.Left = &TreeNode{Val: 1, Right: &TreeNode{Val: 2}}
+	root.Right = &TreeNode{Val: 4}
+	kthSmallest(root, 1)
 }

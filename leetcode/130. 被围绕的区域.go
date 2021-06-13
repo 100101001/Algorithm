@@ -103,15 +103,14 @@ func solve1(board [][]byte) {
 		for j := 1; j < col-1; j++ {
 			// 自身是O
 			if board[i][j] == 'O' {
-				uf.union(i*col+j, dummy)
-			}
-			// 上下左右连通
-			for _, vv := range d {
-				x := i + vv[0]
-				y := j + vv[1]
-				// x,y不会超过
-				if board[x][y] == 'O' {
-					uf.union(x*col+y, i*col+j)
+				// 上下左右连通
+				for _, vv := range d {
+					x := i + vv[0]
+					y := j + vv[1]
+					// x,y不会超过
+					if board[x][y] == 'O' {
+						uf.union(x*col+y, i*col+j)
+					}
 				}
 			}
 		}
@@ -120,7 +119,7 @@ func solve1(board [][]byte) {
 	// 所有不和 dummy 连通的 O，都要被替换
 	for i := 0; i < row; i++ {
 		for j := 0; j < col; j++ {
-			if board[i][j] == 'O' && !uf.connected(i*col+j, dummy) {
+			if !uf.connected(i*col+j, dummy) {
 				board[i][j] = 'X'
 			}
 		}

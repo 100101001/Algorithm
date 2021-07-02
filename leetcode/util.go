@@ -1,5 +1,10 @@
 package main
 
+import (
+	"container/list"
+	"sync"
+)
+
 func maxInt(x, y int) int {
 	if x > y {
 		return x
@@ -69,3 +74,50 @@ func (u *UF) union(p, q int) {
 
 	u.count--
 }
+
+type Stack struct {
+	l    *list.List
+	lock sync.RWMutex
+}
+
+func NewStack() *Stack {
+	return &Stack{
+		l:    list.New(),
+		lock: sync.RWMutex{},
+	}
+}
+
+func (s *Stack) Push(val interface{}) {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+	s.l.PushBack(val)
+}
+
+func (s *Stack) Pop() interface{} {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+	e := s.l.Back()
+	if e != nil {
+		s.l.Remove(e)
+		return e.Value
+	}
+	return nil
+}
+
+func (s *Stack) Len() int {
+	return s.l.Len()
+}
+
+func (s *Stack) Empty() bool {
+	return s.l.Len() == 0
+}
+
+func (s *Stack) Peak() interface{} {
+	e := s.l.Back()
+	if e != nil {
+		return e.Value
+	}
+	return nil
+}
+
+/**

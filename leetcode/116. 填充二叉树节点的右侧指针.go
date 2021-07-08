@@ -7,6 +7,12 @@ type Node struct {
 	Next  *Node
 }
 
+// 填充两个相邻节点的指针
+// 后序遍历
+// 树中：让左孩子指向右孩子
+// 跨树：让左子树最右侧节点指向右子树最左侧节点
+// 先序遍历（左孩子指向右孩子）
+// 最小结构不是三角形，而是子和子子层的完全二叉树形，所有两个子树相连
 func connect(root *Node) *Node {
 	if root == nil {
 		return root

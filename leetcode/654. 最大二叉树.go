@@ -4,6 +4,9 @@ func constructMaximumBinaryTree(nums []int) *TreeNode {
 	return constructMaxHelper(nums, 0, len(nums)-1)
 }
 
+// 先序遍历
+// 函数定义：返回数组段构造的树根
+// 最大值作为根，对左数组段和右数组段递归作为左右子树
 // 从数组构造一个最大二叉树
 func constructMaxHelper(nums []int, lo, hi int) *TreeNode {
 	if lo > hi {

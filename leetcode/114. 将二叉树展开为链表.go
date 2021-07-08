@@ -6,6 +6,9 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// 后序遍历，
+// 函数定义：拉直子树
+// 将左子变为右子，将右子变为左子最后一个被遍历到的节点的孩子（通过后序遍历拉直，此时就是只找右子即可）
 func flatten(root *TreeNode) *TreeNode {
 	helper(root)
 	return root

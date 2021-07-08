@@ -120,4 +120,3 @@ func (s *Stack) Peak() interface{} {
 	return nil
 }
 
-/**

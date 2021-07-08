@@ -19,6 +19,8 @@ func minInt(x, y int) int {
 	return x
 }
 
+
+
 type UF struct {
 	parent []int
 	size   []int //

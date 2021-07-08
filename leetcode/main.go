@@ -30,5 +30,6 @@ func main() {
 	//fmt.Println(canPartitionKSubsets2([]int{85,35,40,64,86,45,63,16,5364,110,5653,97,95}, 7))
 
 	//fmt.Println(subsets2([]int{1,2,5,6}))
-	fmt.Println(generateParenthesis(3))
+	fmt.Println(coinChange([]int{1,2,3}, 10))
+	//fmt.Println(generateParenthesis(3))
 }

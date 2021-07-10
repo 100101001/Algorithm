@@ -2,6 +2,7 @@ package main
 
 import (
 	"container/list"
+	"math"
 	"sync"
 )
 
@@ -19,7 +20,25 @@ func minInt(x, y int) int {
 	return x
 }
 
+func maxIntV2(nums ...int) int {
+	var maxI = math.MinInt64
+	for _, num := range nums {
+		if maxI < num {
+			maxI = num
+		}
+	}
+	return maxI
+}
 
+func minIntV2(nums ...int) int {
+	var minI = math.MaxInt64
+	for _, num := range nums {
+		if minI > num {
+			minI = num
+		}
+	}
+	return minI
+}
 
 type UF struct {
 	parent []int
@@ -121,4 +140,3 @@ func (s *Stack) Peak() interface{} {
 	}
 	return nil
 }
-

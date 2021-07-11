@@ -77,57 +77,6 @@ func removeArrI(arr []int, target int) []int {
 	return res
 }
 
-func binarySearch(arr []int, skill int) int {
-
-	if arr[0] > skill {
-		return 0
-	}
-	if arr[len(arr)-1] < skill {
-		return len(arr) - 1
-	}
-	start, end := 0, len(arr)
-	for start < end {
-		i := (start + end) / 2
-		if arr[i] == skill {
-			return i
-		}
-		if arr[i] < skill {
-			if i+1 < len(arr) {
-				if arr[i+1] > skill {
-					if skill-arr[i] <= arr[i+1]-skill {
-						return i
-					} else {
-						return i + 1
-					}
-				} else if arr[i+1] == skill {
-					return i + 1
-				} else {
-					start = i
-				}
-			} else {
-				return i
-			}
-		} else {
-			if i-1 >= 0 {
-				if arr[i-1] < skill {
-					if skill-arr[i-1] <= arr[i]-skill {
-						return i - 1
-					} else {
-						return i
-					}
-				} else if arr[i-1] == skill {
-					return i - 1
-				} else {
-					end = i
-				}
-			} else {
-				return i
-			}
-		}
-	}
-	return 0
-}
-
 func getNumsInLine(str string) []int64 {
 	vs := strings.Split(str, " ")
 	var ret []int64

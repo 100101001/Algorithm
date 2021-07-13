@@ -34,7 +34,7 @@ func main() {
 	//fmt.Println(generateParenthesis(3))
 
 	//fmt.Println(superEggDrop(2, 100))
-	fmt.Println(longestCommonSubsequence("abec", "abc"))
-
+	//fmt.Println(longestCommonSubsequence("abec", "abc"))
+	fmt.Println(minWindows("aab", "aab"))
 
 }

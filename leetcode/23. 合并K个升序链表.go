@@ -30,12 +30,6 @@ func init() {
 	}
 }
 
-// Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // 合并k个链表方法1
 func mergeKLists(lists []*ListNode) *ListNode {
 	for len(lists) > 1 {
@@ -85,7 +79,53 @@ func mergeTwoLists(first, second *ListNode) *ListNode {
 	return head.Next
 }
 
-
 func mergeKLists2(lists []*ListNode) *ListNode {
 	return nil
+}
+
+// 模拟面试
+func mergeKList(kL []*ListNode) *ListNode {
+	return mergeKListHelper(kL, 0, len(kL)-1)
+}
+
+func mergeKListHelper(kL []*ListNode, l, r int) *ListNode {
+	// 终止条件考虑不清楚
+	if l > r {
+		return nil
+	}
+	if l == r {
+		return kL[l]
+	}
+
+	middle := l + (r-l)/2
+	h1 := mergeKListHelper(kL, l, middle)
+	h2 := mergeKListHelper(kL, middle+1, r)
+	return mergeTwoList(h1, h2)
+}
+
+// 考虑l1,l2是空
+func mergeTwoList(l1, l2 *ListNode) *ListNode {
+	f1, f2 := l1, l2
+	var head = &ListNode{}
+	var res = head
+	for f1 != nil && f2 != nil {
+		if f1.Val < f2.Val {
+			head.Next = f1
+			f1 = f1.Next
+		} else {
+			head.Next = f2
+			f2 = f2.Next
+		}
+		head = head.Next
+	}
+
+	if f1 != nil {
+		head.Next = f1
+	}
+
+	if f2 != nil {
+		head.Next = f2
+	}
+
+	return res.Next
 }

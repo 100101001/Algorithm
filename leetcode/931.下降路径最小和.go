@@ -12,7 +12,7 @@ func minFallingPathSumDFS(matrix [][]int) int {
 	m, n := len(matrix), len(matrix[0])
 
 	// 初始化备忘录
-	minFallingPathSumDFSMEM = fillTwoArray(m, n, math.MaxInt64)
+	minFallingPathSumDFSMEM = fillTwoArrayInt(m, n, math.MaxInt64)
 
 	// 最小值是遍历最后一行所有终点的最小值
 	var resInt = math.MaxInt64
@@ -47,7 +47,7 @@ func minFallingPathSumDFSHelper(matrix [][]int, i, j int) int {
 
 //
 func minFallingPathSumDP(matrix [][]int) int {
-	var dp = fillTwoArray(len(matrix), len(matrix[0]), -1)
+	var dp = fillTwoArrayInt(len(matrix), len(matrix[0]), -1)
 
 	for i := 0; i < len(matrix); i++ {
 		for j := 0; j < len(matrix[0]); j++ {

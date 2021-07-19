@@ -4,7 +4,7 @@ package main
 func longestPalindromeSubSeq(s string) int {
 
 	// 备忘录空字符串=0, 单个字符=1
-	var dp = fillTwoArray(len(s), len(s), 0)
+	var dp = fillTwoArrayInt(len(s), len(s), 0)
 	for i := 0; i < len(dp); i++ {
 		dp[i][i] = 1
 	}

@@ -37,32 +37,33 @@ func main() {
 	//fmt.Println(longestCommonSubsequence("abec", "abc"))
 	//fmt.Println(minWindows("aab", "aab"))
 	//fmt.Println(checkInclusion("abec", "ba"))
-	fmt.Println(lengthOfLongestSubstring("nfpdmpi"))
-	h1 := mergeKList([]*ListNode{
-		{Val: 1, Next: &ListNode{
-			Val: 3, Next: &ListNode{Val: 4},
-		}},
-		{Val: -1, Next: &ListNode{
-			Val: 2, Next: &ListNode{Val: 99, Next: &ListNode{Val: 100}},
-		}},
-		{Val: -100, Next: &ListNode{
-			Val: 5, Next: &ListNode{Val: 13, Next: &ListNode{Val: 66, Next: &ListNode{Val: 77}}},
-		}},
-		{Val: 3},
-		{Val: -18, Next: &ListNode{Val: 18}},
-	})
+	//fmt.Println(lengthOfLongestSubstring("nfpdmpi"))
+	//h1 := mergeKList([]*ListNode{
+	//	{Val: 1, Next: &ListNode{
+	//		Val: 3, Next: &ListNode{Val: 4},
+	//	}},
+	//	{Val: -1, Next: &ListNode{
+	//		Val: 2, Next: &ListNode{Val: 99, Next: &ListNode{Val: 100}},
+	//	}},
+	//	{Val: -100, Next: &ListNode{
+	//		Val: 5, Next: &ListNode{Val: 13, Next: &ListNode{Val: 66, Next: &ListNode{Val: 77}}},
+	//	}},
+	//	{Val: 3},
+	//	{Val: -18, Next: &ListNode{Val: 18}},
+	//})
+	//
+	//for start := h1; start != nil; start = start.Next {
+	//	fmt.Println(start.Val)
+	//}
+	//
+	//tree := &TreeNode{
+	//	Val: -1, Left: &TreeNode{
+	//		Val: -10, Left: &TreeNode{Val: -100},
+	//	}, Right: &TreeNode{
+	//		Val: -100,
+	//	},
+	//}
+	//fmt.Println(maxPathSum(tree))
 
-	for start := h1; start != nil; start = start.Next {
-		fmt.Println(start.Val)
-	}
-
-	tree := &TreeNode{
-		Val: -1, Left: &TreeNode{
-			Val: -10, Left: &TreeNode{Val: -100},
-		}, Right: &TreeNode{
-			Val: -100,
-		},
-	}
-	fmt.Println(maxPathSum(tree))
-
+	fmt.Println(KBackpack(10, []int{5, 6, 2, 3}))
 }

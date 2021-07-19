@@ -8,7 +8,7 @@ func minDistance(word1 string, word2 string) int {
 var minDistanceMem [][]int
 
 func minDistanceDFS(word1 string, word2 string) int {
-	minDistanceMem = fillTwoArray(len(word1), len(word2), -1)
+	minDistanceMem = fillTwoArrayInt(len(word1), len(word2), -1)
 	minDistanceDFSHelper(word1, word2, len(word1), len(word2))
 	return minDistanceMem[len(word1)][len(word2)]
 }
@@ -43,7 +43,7 @@ func minDistanceDFSHelper(word1 string, word2 string, i, j int) int {
 func minDistanceDP(word1 string, word2 string) int {
 
 	maxOp := len(word2) + len(word1) + 1
-	var dp = fillTwoArray(len(word1)+1, len(word2)+1, maxOp)
+	var dp = fillTwoArrayInt(len(word1)+1, len(word2)+1, maxOp)
 
 	for i := range dp {
 		dp[i][0] = i

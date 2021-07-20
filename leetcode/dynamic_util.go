@@ -22,6 +22,14 @@ func fillTwoArrayBool(m, n int, val bool) [][]bool {
 	return dp
 }
 
+func fillOneArrayBool(m int, val bool) []bool {
+	var dp = make([]bool, m)
+	for i := range dp {
+		dp[i] = val
+	}
+	return dp
+}
+
 func fillOneArrayInt(m, val int) []int {
 	var dp = make([]int, m)
 	for i := range dp {

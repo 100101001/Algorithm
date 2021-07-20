@@ -65,5 +65,6 @@ func main() {
 	//}
 	//fmt.Println(maxPathSum(tree))
 
-	fmt.Println(KBackpack(10, []int{5, 6, 2, 3}))
+	//fmt.Println(KBackpack(10, []int{5, 6, 2, 3}))
+	fmt.Println(change(5, []int{1, 2, 5}))
 }

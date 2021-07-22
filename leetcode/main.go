@@ -66,5 +66,10 @@ func main() {
 	//fmt.Println(maxPathSum(tree))
 
 	//fmt.Println(KBackpack(10, []int{5, 6, 2, 3}))
-	fmt.Println(change(5, []int{1, 2, 5}))
+	//fmt.Println(change(5, []int{1, 2, 5}))
+	// 0, 1, 2, 4
+	// (1, 5)、(2, 7)、(4, 8)
+	fmt.Println(eraseOverlapIntervals([][]int{
+		{1, 2}, {2, 3}, {3, 4}, {1, 3},
+	}))
 }

@@ -6,6 +6,14 @@ import (
 	"sync"
 )
 
+func absInt(x int) int {
+	if x > 0 {
+		return x
+	}
+	return -x
+}
+
+
 func maxInt(x, y int) int {
 	if x > y {
 		return x

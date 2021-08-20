@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"os"
 	"sort"
-	"strconv"
-	"strings"
 )
 
 func main() {
@@ -75,18 +73,4 @@ func removeArrI(arr []int, target int) []int {
 		}
 	}
 	return res
-}
-
-func getNumsInLine(str string) []int64 {
-	vs := strings.Split(str, " ")
-	var ret []int64
-	for _, v := range vs {
-		ret = append(ret, str2Int64(v))
-	}
-	return ret
-}
-
-func str2Int64(str string) int64 {
-	num, _ := strconv.ParseInt(str, 10, 64)
-	return num
 }
